@@ -22,4 +22,11 @@ export class TaskListComponent implements OnInit {
     new Task(6,'Plot my world domination plan','Cause I am an evil overlord'),
   ];
 
+  toggleDetails(i: number){
+    this.tasks[i].showDescription = !this.tasks[i].showDescription
+
+    console.log("This is displayed", this.tasks[i].showDescription)
+
+  }
+
 }

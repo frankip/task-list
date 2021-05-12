@@ -7,6 +7,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { TaskListComponent } from './components/task-list/task-list.component';
 import { TaskDetailsComponent } from './components/task-details/task-details.component';
+import { StrikethroughDirective } from './strikethrough.directive';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import { TaskDetailsComponent } from './components/task-details/task-details.com
     NavbarComponent,
     TaskListComponent,
     TaskDetailsComponent,
+    StrikethroughDirective,
   ],
   imports: [
     BrowserModule,

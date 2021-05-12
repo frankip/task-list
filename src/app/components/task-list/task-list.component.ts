@@ -26,7 +26,13 @@ export class TaskListComponent implements OnInit {
     this.tasks[i].showDescription = !this.tasks[i].showDescription
 
     console.log("This is displayed", this.tasks[i].showDescription)
-
   }
+
+  completeTask(isComplete, index){
+    if (isComplete) {
+      this.tasks.splice(index,1);
+    }
+  }
+
 
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Task } from 'src/app/task';
 
 
@@ -9,10 +9,15 @@ import { Task } from 'src/app/task';
 })
 export class TaskDetailsComponent implements OnInit {
 
-  @Input() task: any;
+  @Input() task: Task;
+  @Output() isComplete = new EventEmitter<boolean>();
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  goalComplete(complete: boolean){
+   this.isComplete.emit(complete);
   }
 
 }

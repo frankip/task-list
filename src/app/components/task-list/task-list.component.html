@@ -5,7 +5,7 @@
         <li>{{task.name}}</li>
         <button (click)='toggleDetails(i)'>Toggle Details</button>
         <div>
-            <app-task-details *ngIf='task.showDescription' [task]='task'></app-task-details>
+            <app-task-details *ngIf='task.showDescription' [task]='task' (isComplete)='completeTask($event, i)'></app-task-details>
         </div>
         
     </div>

@@ -2,7 +2,7 @@
     <h1>My Task</h1>
     <hr>
     <div *ngFor='let task of tasks; let i = index'>
-        <li appStrikethrough>{{task.name}}</li>
+        <li id="{{i}}" appStrikethrough>{{i}} {{task.name}}</li>
         <button (click)='toggleDetails(i)'>Toggle Details</button>
         <div>
             <app-task-details *ngIf='task.showDescription' [task]='task' (isComplete)='completeTask($event, i)'></app-task-details>

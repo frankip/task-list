@@ -8,6 +8,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { TaskListComponent } from './components/task-list/task-list.component';
 import { TaskDetailsComponent } from './components/task-details/task-details.component';
 import { StrikethroughDirective } from './strikethrough.directive';
+import { DateCountPipe } from './date-count.pipe';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { StrikethroughDirective } from './strikethrough.directive';
     TaskListComponent,
     TaskDetailsComponent,
     StrikethroughDirective,
+    DateCountPipe,
   ],
   imports: [
     BrowserModule,

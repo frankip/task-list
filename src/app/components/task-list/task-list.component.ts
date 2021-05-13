@@ -30,7 +30,11 @@ export class TaskListComponent implements OnInit {
 
   completeTask(isComplete, index){
     if (isComplete) {
-      this.tasks.splice(index,1);
+      let toDelete = confirm(`Are you sure you want to delete ${this.tasks[index].name}?`)
+      if(toDelete){
+        this.tasks.splice(index,1);
+
+      }
     }
   }
 

@@ -9,6 +9,8 @@ import { TaskListComponent } from './components/task-list/task-list.component';
 import { TaskDetailsComponent } from './components/task-details/task-details.component';
 import { StrikethroughDirective } from './strikethrough.directive';
 import { DateCountPipe } from './date-count.pipe';
+import { VotesComponent } from './components/votes/votes.component';
+import { HighlightDirective } from './highlight.directive';
 
 @NgModule({
   declarations: [
@@ -19,6 +21,8 @@ import { DateCountPipe } from './date-count.pipe';
     TaskDetailsComponent,
     StrikethroughDirective,
     DateCountPipe,
+    VotesComponent,
+    HighlightDirective,
   ],
   imports: [
     BrowserModule,

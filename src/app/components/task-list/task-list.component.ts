@@ -38,5 +38,15 @@ export class TaskListComponent implements OnInit {
     }
   }
 
+  updateTotalVotes(votes, index){
+    this.tasks[index].votes = votes
+    this.getHighestVote();
+  }
+
+  getHighestVote(){
+    let highvote = Math.max.apply(Math, this.tasks.map(function(task) { return task.votes; }))
+  
+  }
+
 
 }

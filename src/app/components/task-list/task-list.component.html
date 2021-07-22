@@ -6,7 +6,12 @@
             <div *ngFor='let task of tasks; let i = index'>
                 <div>
 
-                    <h4 id="{{i}}" appStrikethrough><span class="alert badge bg-primary">{{i}}</span>-<span class="alert-secondary" role="alert">{{task.name}}</span></h4>
+                    <h4 id="{{i}}"><span class="alert badge bg-primary">{{i}}</span>-<span class="alert-secondary" role="alert">{{task.name}}</span></h4>
+                    <div style="display: block; block-size:15px;" >
+                        <h6 appHighlight>{{task.votes}}</h6>
+                    </div>
+                    <br>
+                    <app-votes (totalVotesEmitter)='updateTotalVotes($event, i)'></app-votes>
                     <button class="btn btn-link" (click)='toggleDetails(i)'>Toggle Details</button>
                     <div>
                         <app-task-details *ngIf='task.showDescription' [task]='task' (isComplete)='completeTask($event, i)'></app-task-details>

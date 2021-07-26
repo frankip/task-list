@@ -1,5 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import { GoalServiceService } from 'src/app/goal-service.service';
 import { Task } from 'src/app/task';
+import { Quote  } from 'src/app/quote-class/quote';
+import { HttpClient } from '@angular/common/http';
+import { QuoteRequestService } from 'src/app/quote-http/quote-request.service';
+
 
 @Component({
   selector: 'app-task-list',
@@ -7,20 +12,20 @@ import { Task } from 'src/app/task';
   styleUrls: ['./task-list.component.css']
 })
 export class TaskListComponent implements OnInit {
-
-  constructor() { }
+  
+  tasks:Task[];
+  quote: Quote;
+  
+  constructor(taskService:GoalServiceService, private httpService:HttpClient, private quoteService: QuoteRequestService) {
+    this.tasks = taskService.getTasks()
+   }
 
   ngOnInit(): void {
+    this.quoteService.quoteRequest()
+    this.quote = this.quoteService.quote
+
   }
 
-  tasks: Task[] = [
-    new Task(1, 'Watch finding Nemo', 'Find an online version and watch merlin find his son'),
-    new Task(2,'Buy Cookies','I have to buy cookies for the parrot'),
-    new Task(3,'Get new Phone Case','Diana has her birthday coming up soon'),
-    new Task(4,'Get Dog Food','Pupper likes expensive snacks'),
-    new Task(5,'Solve math homework','Damn Math'),
-    new Task(6,'Plot my world domination plan','Cause I am an evil overlord'),
-  ];
 
   toggleDetails(i: number){
     this.tasks[i].showDescription = !this.tasks[i].showDescription
@@ -47,6 +52,8 @@ export class TaskListComponent implements OnInit {
     let highvote = Math.max.apply(Math, this.tasks.map(function(task) { return task.votes; }))
   
   }
+
+
 
 
 }

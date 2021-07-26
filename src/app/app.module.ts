@@ -11,7 +11,7 @@ import { StrikethroughDirective } from './strikethrough.directive';
 import { DateCountPipe } from './date-count.pipe';
 import { VotesComponent } from './components/votes/votes.component';
 import { HighlightDirective } from './highlight.directive';
-
+import { HttpClientModule } from '@angular/common/http'
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,6 +26,7 @@ import { HighlightDirective } from './highlight.directive';
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     AppRoutingModule
   ],
   providers: [],

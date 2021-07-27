@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  baseUrl: "http://quotes.stormconsultancy.co.uk/random.json"
+  baseUrl2: "http://quotes.stormconsultancy.co.uk/random.json",
+  baseUrl: "http://127.0.0.1:8000/"
 };
 
 /*

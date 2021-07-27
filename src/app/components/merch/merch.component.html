@@ -1,0 +1,24 @@
+<p>merch works!</p>
+<div class="container-lg">
+    <h1>My Task</h1>
+    <hr>
+    <div class="row">
+        <div class="col-md-8">
+            <div *ngFor='let task of merchlist; let i = index'>
+                <div>
+
+                    <h4 id="{{i}}"><span class="alert badge bg-primary">{{i}}</span>-<span class="alert-secondary" role="alert">{{task.name}}</span></h4>
+                    <div style="display: block; block-size:15px;" >
+                        <h6 appHighlight>{{task.name}}</h6>
+                    </div>
+                    <br>
+                    <button class="btn btn-link">Toggle Details</button>
+                    
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+</div>
